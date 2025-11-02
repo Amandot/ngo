@@ -160,18 +160,18 @@ export function SimpleLogoutButton({
   )
 }
 
-// Emergency logout button (no confirmation)
-export function EmergencyLogoutButton() {
+// Quick logout button (no confirmation)
+export function QuickLogoutButton() {
   return (
     <LogoutDialog 
       redirectTo="/" 
       showConfirmation={false}
-      variant="destructive"
+      variant="ghost"
       size="sm"
     >
       <div className="flex items-center gap-2">
         <LogOut className="h-4 w-4" />
-        Emergency Logout
+        Quick Logout
       </div>
     </LogoutDialog>
   )

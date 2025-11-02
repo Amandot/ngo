@@ -65,9 +65,10 @@ A modern, full-stack NGO donation platform that enables seamless connections bet
 ### **🏢 NGO Management System**
 
 #### **📝 NGO Registration**
-- Admin-based NGO registration
+- Admin-based NGO registration with secure registration key
 - Interactive location selection with Maps
 - Comprehensive NGO profile management
+- Protected registration process using `ADMIN_SECRET_KEY`
 
 #### **🗺️ Geographic Features**
 - NGO discovery on interactive maps
@@ -186,6 +187,7 @@ ngo/
    GOOGLE_CLIENT_ID=your-google-client-id
    GOOGLE_CLIENT_SECRET=your-google-client-secret
    NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your-google-maps-api-key
+   ADMIN_SECRET_KEY=SECURE_ADMIN_KEY_2024_NGO
    EMAIL_USER=your-email@example.com
    EMAIL_PASS=your-email-password
    ```
@@ -202,6 +204,27 @@ ngo/
 
 6. **Open your browser**
    Visit `http://localhost:3000` to see the application.
+
+---
+
+## 🔐 Admin Access & Registration
+
+### **Default Admin Credentials**
+For immediate access to the admin dashboard:
+- **URL**: http://localhost:3000/auth/admin-login
+- **Email**: `admin@givebackhub.org`
+- **Password**: `admin123456`
+
+### **NGO Registration Key**
+To register new NGOs and create additional admin accounts:
+- **Registration URL**: http://localhost:3000/admin-signup
+- **Admin Registration Key**: `SECURE_ADMIN_KEY_2024_NGO`
+
+> **Security Note**: Change the default admin password and registration key in production environments.
+
+### **User Access**
+Regular users can sign in with Google OAuth at:
+- **URL**: http://localhost:3000/auth/user-login
 
 ---
 

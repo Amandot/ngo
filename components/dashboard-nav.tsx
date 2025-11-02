@@ -53,8 +53,7 @@ export function DashboardNav() {
   const userInitials = user?.name?.split(' ').map(n => n[0]).join('').toUpperCase() || 'U'
   const isAdmin = user?.role === 'admin' || user?.email?.includes('admin')
 
-  // Debug logging
-  console.log('DashboardNav - Status:', status, 'User:', user?.email, 'IsAdmin:', isAdmin)
+
 
   const navigationItems = [
     { href: "/dashboard", label: "Dashboard", icon: BarChart3 },

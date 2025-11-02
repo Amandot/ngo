@@ -6,7 +6,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { LogoutDialog } from "@/components/logout-dialog"
-import { EmergencyLogoutButton } from "@/components/logout-options"
 import { 
   Monitor, 
   Smartphone, 
@@ -194,8 +193,6 @@ export function SessionManager() {
             >
               Sign out all devices
             </LogoutDialog>
-            
-            <EmergencyLogoutButton />
             
             <Button 
               variant="outline" 

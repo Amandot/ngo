@@ -9,8 +9,7 @@ export function ConditionalNavigation() {
   const { data: session, status } = useSession()
   const pathname = usePathname()
 
-  // Debug logging (remove in production)
-  console.log('ConditionalNavigation - Status:', status, 'Pathname:', pathname, 'User:', session?.user?.email)
+
 
   // Loading state - show a minimal loading nav
   if (status === "loading") {

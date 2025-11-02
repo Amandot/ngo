@@ -28,7 +28,6 @@ import {
 } from "@/components/ui/table"
 import Link from "next/link"
 import { SimpleLogoutButton } from "@/components/logout-options"
-import { EmergencyLogout, SessionDebugInfo } from "@/components/emergency-logout"
 import { useState, useEffect } from "react"
 
 interface UserDonation {
@@ -363,11 +362,7 @@ export function UserDashboard() {
         </CardContent>
       </Card>
 
-      {/* Debug Section - Remove in production */}
-      <div className="mt-8 space-y-4">
-        <SessionDebugInfo />
-        <EmergencyLogout />
-      </div>
+
     </div>
   )
 }

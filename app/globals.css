@@ -521,4 +521,49 @@
     opacity: 1;
     transform: translateY(0);
   }
+
+  /* Improved focus states for accessibility */
+  .focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  /* Better mobile touch targets */
+  @media (max-width: 768px) {
+    .btn-primary,
+    .btn-accent,
+    button {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+
+  /* Improved loading states */
+  .loading-skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  /* Better error states */
+  .error-shake {
+    animation: shake 0.5s ease-in-out;
+  }
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+  }
+
+  /* Improved success states */
+  .success-bounce {
+    animation: successBounce 0.6s ease-out;
+  }
+
+  @keyframes successBounce {
+    0% { transform: scale(0.8); opacity: 0; }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); opacity: 1; }
+  }
 }

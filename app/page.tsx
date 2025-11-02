@@ -67,15 +67,15 @@ export default function HomePage() {
             <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6 morphing-shape shadow-lg">
               <Users className="w-9 h-9 text-white" />
             </div>
-            <h2 className="text-2xl font-bold text-foreground mb-4 text-center-justify text-balance">Register Your NGO</h2>
+            <h2 className="text-2xl font-bold text-foreground mb-4 text-center-justify text-balance">For NGOs</h2>
             <p className="text-muted-foreground mb-6 leading-relaxed text-center-justify text-readable text-pretty">
-              Join our platform to receive donations. Connect with donors and amplify your impact.
+              Register your organization to receive donations and connect with generous donors in your community.
             </p>
             <a 
               href="/admin-signup" 
               className="btn-accent w-full text-center block hover-zoom"
             >
-              Register NGO
+              Register Your NGO
             </a>
           </div>
         </div>

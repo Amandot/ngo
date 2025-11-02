@@ -95,37 +95,39 @@ export default function AdminLoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-50 via-white to-blue-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
         {/* Header */}
-        <div className="text-center">
+        <div className="text-center animate-fade-in-up">
           <div className="flex items-center justify-center mb-4">
-            <Shield className="h-12 w-12 text-primary" />
+            <div className="p-3 bg-purple-100 rounded-full">
+              <Shield className="h-12 w-12 text-purple-600" />
+            </div>
           </div>
           <h2 className="text-3xl font-bold text-gray-900">Admin Access</h2>
           <p className="mt-2 text-sm text-gray-600">
-            Sign in to your administrator account
+            Secure administrator portal for NGO management
           </p>
         </div>
 
-        <Card>
-          <CardHeader className="space-y-1">
+        <Card className="shadow-xl border-0 animate-fade-in-up stagger-1">
+          <CardHeader className="space-y-1 pb-4">
             <CardTitle className="text-2xl text-center">Administrator Login</CardTitle>
             <CardDescription className="text-center">
-              Enter your admin credentials to access the management dashboard
+              Enter your credentials to access the management dashboard
             </CardDescription>
           </CardHeader>
-          <CardContent>
+          <CardContent className="space-y-6">
             {error && (
-              <Alert variant="destructive" className="mb-4">
+              <Alert variant="destructive" className="animate-fade-in-up">
                 <AlertCircle className="h-4 w-4" />
                 <AlertDescription>{error}</AlertDescription>
               </Alert>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <Label htmlFor="email">Admin Email</Label>
+            <form onSubmit={handleSubmit} className="space-y-5">
+              <div className="space-y-2">
+                <Label htmlFor="email" className="text-sm font-medium">Admin Email</Label>
                 <div className="relative">
                   <Mail className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                   <Input
@@ -134,8 +136,8 @@ export default function AdminLoginPage() {
                     type="email"
                     autoComplete="email"
                     required
-                    className="pl-10"
-                    placeholder="Enter your admin email"
+                    className="pl-10 h-11 border-2 focus:border-purple-500 transition-colors"
+                    placeholder="admin@example.com"
                     value={formData.email}
                     onChange={handleInputChange}
                     disabled={isLoading}
@@ -143,8 +145,8 @@ export default function AdminLoginPage() {
                 </div>
               </div>
 
-              <div>
-                <Label htmlFor="password">Password</Label>
+              <div className="space-y-2">
+                <Label htmlFor="password" className="text-sm font-medium">Password</Label>
                 <div className="relative">
                   <Lock className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                   <Input
@@ -153,7 +155,7 @@ export default function AdminLoginPage() {
                     type="password"
                     autoComplete="current-password"
                     required
-                    className="pl-10"
+                    className="pl-10 h-11 border-2 focus:border-purple-500 transition-colors"
                     placeholder="Enter your password"
                     value={formData.password}
                     onChange={handleInputChange}
@@ -164,23 +166,33 @@ export default function AdminLoginPage() {
 
               <Button
                 type="submit"
-                className="w-full"
+                className="w-full h-11 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-medium shadow-lg hover:shadow-xl transition-all duration-200"
                 disabled={isLoading}
               >
-                {isLoading ? 'Signing in...' : 'Sign in as Admin'}
+                {isLoading ? (
+                  <>
+                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                    Signing in...
+                  </>
+                ) : (
+                  <>
+                    <Shield className="mr-2 h-4 w-4" />
+                    Sign in as Admin
+                  </>
+                )}
               </Button>
             </form>
 
             {/* Security Notice */}
-            <div className="mt-6 p-4 bg-amber-50 border border-amber-200 rounded-md">
-              <div className="flex">
-                <Shield className="h-5 w-5 text-amber-400" />
+            <div className="p-4 bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-lg">
+              <div className="flex items-start">
+                <Shield className="h-5 w-5 text-amber-500 mt-0.5 flex-shrink-0" />
                 <div className="ml-3">
                   <h3 className="text-sm font-medium text-amber-800">
-                    Administrator Access Only
+                    Secure Administrator Access
                   </h3>
                   <p className="text-sm text-amber-700 mt-1">
-                    This login is restricted to NGO administrators and staff members only.
+                    This portal is exclusively for verified NGO administrators and authorized staff members.
                   </p>
                 </div>
               </div>
@@ -189,19 +201,28 @@ export default function AdminLoginPage() {
         </Card>
 
         {/* Footer */}
-        <div className="text-center space-y-4">
-          <p className="text-sm text-gray-600">
-            Need to create an admin account?{' '}
-            <Link href="/auth/admin-signup" className="font-medium text-primary hover:underline">
-              Register Here
+        <div className="text-center space-y-4 animate-fade-in-up stagger-2">
+          <div className="flex items-center justify-center space-x-4">
+            <Link 
+              href="/auth/admin-signup" 
+              className="text-sm text-purple-600 hover:text-purple-500 font-medium hover:underline transition-colors"
+            >
+              Register NGO
             </Link>
-          </p>
-          <p className="text-sm text-gray-600">
-            Looking for user login?{' '}
-            <Link href="/auth/user-login" className="font-medium text-primary hover:underline">
+            <span className="text-gray-300">•</span>
+            <Link 
+              href="/auth/user-login" 
+              className="text-sm text-blue-600 hover:text-blue-500 font-medium hover:underline transition-colors"
+            >
               User Login
             </Link>
-          </p>
+          </div>
+          <Link 
+            href="/" 
+            className="inline-flex items-center text-sm text-gray-500 hover:text-gray-700 transition-colors"
+          >
+            ← Back to Home
+          </Link>
         </div>
       </div>
     </div>
