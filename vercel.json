@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "npm run vercel-build",
   "installCommand": "npm install",
   "functions": {
     "app/api/**/*.ts": {
@@ -7,6 +7,6 @@
     }
   },
   "env": {
-    "PRISMA_GENERATE_DATAPROXY": "true"
+    "SKIP_ENV_VALIDATION": "true"
   }
 }

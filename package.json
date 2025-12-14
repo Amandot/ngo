@@ -9,7 +9,8 @@
     "start": "next start",
     "postinstall": "prisma generate",
     "db:migrate": "prisma migrate deploy",
-    "db:push": "prisma db push"
+    "db:push": "prisma db push",
+    "vercel-build": "prisma generate && next build"
   },
   "dependencies": {
     "@barba/core": "^2.10.3",

@@ -52,6 +52,8 @@ NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=AIzaSyBHLett8djBo62dDXj0EjCpF8OK-1iSEhs
 ADMIN_SECRET_KEY=GIVEBACK_ADMIN_2024_SECRET
 ```
 
+**⚠️ IMPORTANT:** You MUST set up the DATABASE_URL before deployment. The build will fail without it.
+
 #### Optional Variables (for full functionality):
 ```
 GOOGLE_CLIENT_ID=your-google-oauth-client-id
