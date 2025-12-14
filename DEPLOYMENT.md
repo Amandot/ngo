@@ -8,12 +8,19 @@
 ## Step-by-Step Deployment
 
 ### 1. **Prepare Your Repository**
+
+**🔧 Fix Applied:** Removed `pnpm-lock.yaml` and using `npm` for consistency.
+
 ```bash
 # Make sure all changes are committed
 git add .
-git commit -m "Prepare for Vercel deployment"
+git commit -m "Fix deployment: Remove pnpm lockfile, use npm for Vercel deployment"
 git push origin main
 ```
+
+**Or use the provided script:**
+- **Windows:** Run `deploy.bat`
+- **Mac/Linux:** Run `chmod +x deploy.sh && ./deploy.sh`
 
 ### 2. **Set Up Vercel Postgres Database**
 1. Go to [Vercel Dashboard](https://vercel.com/dashboard)
