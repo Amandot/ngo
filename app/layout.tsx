@@ -20,6 +20,18 @@ export const metadata: Metadata = {
   description:
     "Join us in creating lasting impact through community-driven initiatives that address real needs and build sustainable futures.",
   generator: "v0.app",
+  manifest: "/manifest.json",
+  themeColor: "#0F172A",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "GiveBack Hub",
+  },
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+  },
 }
 
 export default function RootLayout({
