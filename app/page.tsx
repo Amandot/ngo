@@ -83,7 +83,10 @@ export default function HomePage() {
         {/* Additional Info Section */}
         <div className="mt-16 animate-fade-in-up stagger-4">
           <div className="glass-effect rounded-2xl p-8 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-foreground mb-4 text-shadow-glow text-center-justify text-balance">Why Choose GiveBack Hub?</h3>
+            {/* <h3 className="text-2xl font-bold text-foreground mb-4 text-shadow-glow text-center-justify text-balance">Why Choose GiveBack Hub?</h3> */}
+            {/* <h3 className="text-2xl font-bold text-blue-400 mb-4 text-shadow-glow text-center-justify text-balance">
+  Why Choose GiveBack Hub?
+</h3> */}
             <div className="grid md:grid-cols-3 gap-6 text-center">
               <ScrollReveal delay={100}>
                 <div className="space-y-2">
